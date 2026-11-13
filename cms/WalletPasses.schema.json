@@ -1,0 +1,5 @@
+{
+ "collectionId":"WalletPasses","permissions":"Admin-only read/create/update/delete; backend suppressAuth", "fields":{
+  "passId":"Text (unique index recommended)","qrValue":"Text (unique index required)","holderName":"Text","eventName":"Text","organizationName":"Text","passType":"Text","dateLabel":"Text","sessionLabel":"Text","venue":"Text","relevantDate":"Date and Time (optional)","status":"Text: valid|cancelled", "backgroundColor":"Text","foregroundColor":"Text","labelColor":"Text", "walletStatus":"Text: pending|generating|generated|error", "walletSerial":"Text", "providerUrl":"Text (private)","providerExpiresAt":"Date and Time", "mediaFileUrl":"Text (private)","downloadToken":"Text (private, unique index)","lockUntil":"Date and Time", "walletGeneratedAt":"Date and Time"
+ }
+}
