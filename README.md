@@ -11,8 +11,8 @@
 
 ## Instalación concreta
 
-1. Crea un repositorio público de GitHub (por ejemplo `joteiza003/baztango-wallet`), sube los archivos de la **raíz** de este paquete y activa **Settings → Pages → Deploy from a branch → main → /(root)**. La URL será `https://joteiza003.github.io/baztango-wallet/`. No subas datos de asistentes reales ni secretos al repo.
-2. En Wix Studio habilita Velo. Crea las colecciones privadas `WalletPasses` y `WalletGenerationLog` según `cms/*.schema.json`; importa `cms/ejemplo_baztango.csv` solo como dato de prueba.
+1. Crea un repositorio público de GitHub (`joteiza003/wallet`), sube los archivos de la **raíz** de este paquete y activa **Settings → Pages → Deploy from a branch → main → /(root)**. La URL será `https://joteiza003.github.io/wallet/`. No subas datos de asistentes reales ni secretos al repo.
+2. En Wix Studio habilita Velo. Crea las colecciones privadas `WalletPasses` y `WalletGenerationLog` según `cms/*.schema.json`; crea un registro de prueba ficticio directamente en Wix CMS. No publiques registros reales de asistentes en GitHub.
 3. Copia cada archivo de `wix-backend/` al Backend de Wix. **Si existe `http-functions.js`, fusiona los exports en vez de sustituirlo**. Verifica que los import paths sean compatibles con la versión Velo.
 4. En Secrets Manager de Wix crea `WALLET_CONTACT_EMAIL` con un correo real aprobado por el proveedor. No se guarda en GitHub.
 5. Edita en `wix-backend/http-functions.js` las constantes `ALLOWED_ORIGIN` y `BASE` con el origen GitHub Pages y el dominio real publicado en Wix (en este paquete usan `https://joteiza003.github.io` y `https://www.joseba-bakartxo.com`).
@@ -40,3 +40,11 @@ node --check app.js
 Estos tests comprueban funciones puras y sintaxis. No sustituyen una prueba de integración Wix / GitHub / Safari.
 
 Documentación: https://dev.wix.com/docs/velo/velo-only-apis/wix-http-functions/introduction
+
+## Repositorio de pruebas y migración
+
+- Origen temporal: https://github.com/joteiza003/wallet
+- GitHub Pages temporal: https://joteiza003.github.io/wallet/
+- Repositorio final previsto, **solo después de completar las pruebas**: https://github.com/baztangoinfo/wallet
+- Para migrar: añade un segundo remoto Git (`git remote add production https://github.com/baztangoinfo/wallet.git`) y ejecuta `git push production main` cuando se autorice; actualiza GitHub Pages, CORS y dominio.
+- Nunca publiques en GitHub registros de asistentes, correos de contacto reales, secretos ni archivos `.pkpass`.

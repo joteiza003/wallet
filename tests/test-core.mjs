@@ -3,12 +3,12 @@ import {readFileSync} from 'node:fs';
 // load the Wix-independent module through data: import to avoid project module mode confusion.
 const text=readFileSync(new URL('../wix-backend/walletCore.js',import.meta.url),'utf8');
 const core=await import('data:text/javascript;base64,'+Buffer.from(text).toString('base64'));
-assert.equal(core.extractPassId(' BZT20_CAN+10_1 '),'BZT20_CAN+10_1');
+assert.equal(core.extractPassId(' TEST_WALLET_001 '),'TEST_WALLET_001');
 assert.equal(core.extractPassId(''),null);
 
-const r={passId:'BZT20_CAN+10_1',qrValue:'BZT20_CAN+10_1',holderName:'Yvonne Dornfeld Dornfeld',eventName:'BAZTANGO 20',passType:'Canaro +',status:'valid',dateLabel:'26–29 NOVIEMBRE 2026'};
+const r={passId:'TEST_WALLET_001',qrValue:'TEST_WALLET_001',holderName:'Persona de prueba',eventName:'BAZTANGO 20',passType:'Canaro +',status:'valid',dateLabel:'26–29 NOVIEMBRE 2026'};
 const p=core.mapPass(r,'contact@baztango.test');
-assert.equal(p.barcode_message,'BZT20_CAN+10_1');
+assert.equal(p.barcode_message,'TEST_WALLET_001');
 assert.equal(p.x402_ready,false);
 assert.equal(p.style,'eventTicket');
 assert.equal(core.isValidRecord({...r,status:'cancelled'}),false);
