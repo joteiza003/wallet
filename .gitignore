@@ -1,0 +1,16 @@
+*.pkpass
+.env
+.env.*
+!*.example
+*.pem
+*.p12
+*.p8
+*.key
+*.zip
+node_modules/
+__pycache__/
+.local/
+shots/
+.taste-skill/
+cms/*private*
+.DS_Store

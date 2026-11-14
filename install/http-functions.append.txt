@@ -1,0 +1,12 @@
+
+// BAZTANGO Wallet: conservar todas las funciones existentes del sitio.
+import {
+  post_walletGenerate as walletGenerate,
+  options_walletGenerate as walletOptions,
+  get_walletDownload as walletDownload,
+  post_walletSync as walletSync
+} from 'backend/walletApi';
+export function post_walletGenerate(request) { return walletGenerate(request); }
+export function options_walletGenerate(request) { return walletOptions(request); }
+export function get_walletDownload(request) { return walletDownload(request); }
+export function post_walletSync(request) { return walletSync(request); }
