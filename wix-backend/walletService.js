@@ -1,5 +1,4 @@
 import {randomBytes} from 'crypto';
-import wixSecretsBackend from 'wix-secrets-backend';
 import {isValidRecord,extractPassId,mapPass,limitDayUTC,errorResult} from 'backend/walletCore';
 import {recordsMatch} from 'backend/walletSyncCore';
 import {findByQr,getById,save,acquireGeneration,releaseGeneration,reserveQuota,logResult} from 'backend/walletRepository';
@@ -28,7 +27,7 @@ export async function generateFromQr(rawQr){
     r=await getById(r._id);
     if(!isValidRecord(r))return errorResult('INVALID');
     if(cached(r))return ready(r);
-    const contact=await wixSecretsBackend.getSecret('WALLET_CONTACT_EMAIL');
+    const contact='baztangoinfo@gmail.com';
     const payload=mapPass(r,contact);
     const day=limitDayUTC();
     if(!await reserveQuota(day))return errorResult('LIMIT');

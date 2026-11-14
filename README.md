@@ -22,7 +22,7 @@ python scripts/sync_manager.py --db "D:\04_ESTUDIOS_ESCUELA\ESCUELA\baztango\202
 
 ## Configuración Wix
 
-La colección CMS debe tener permisos de administración únicamente. El secreto de sincronización existente se llama `baztango-reservations-export-token`. La emisión requiere `WALLET_CONTACT_EMAIL` con un correo real aceptado por el proveedor. El origen CORS de GitHub Pages se define en `wix-backend/http-functions.js`.
+La colección CMS debe tener permisos de administración únicamente. El secreto de sincronización existente se llama `baztango-reservations-export-token`. La emisión usa el correo de contacto público de BAZTANGO (`baztangoinfo@gmail.com`). El origen CORS de GitHub Pages se define en `wix-backend/http-functions.js`.
 
 El flujo público está limitado a diez emisiones nuevas al día. Una descarga de un pase vigente usa la caché y no genera otro. Los identificadores QR existentes son predecibles, por lo que la posesión de una imagen QR no demuestra identidad; esta página sirve para añadir la propia entrada a Wallet, no para verificar acceso al evento.
 

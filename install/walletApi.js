@@ -4,7 +4,6 @@ import wixData3 from "wix-data";
 
 // wix-backend/walletService.js
 import { randomBytes } from "crypto";
-import wixSecretsBackend from "wix-secrets-backend";
 
 // wix-backend/walletCore.js
 var CONFIG = Object.freeze({
@@ -295,7 +294,7 @@ async function generateFromQr(rawQr) {
     r = await getById(r._id);
     if (!isValidRecord(r)) return errorResult("INVALID");
     if (cached(r)) return ready(r);
-    const contact = await wixSecretsBackend.getSecret("WALLET_CONTACT_EMAIL");
+    const contact = "baztangoinfo@gmail.com";
     const payload = mapPass(r, contact);
     const day = limitDayUTC();
     if (!await reserveQuota(day)) return errorResult("LIMIT");
@@ -332,7 +331,7 @@ async function generateFromQr(rawQr) {
 // wix-backend/walletSync.js
 import wixData2 from "wix-data";
 import { createHash as createHash2, timingSafeEqual } from "crypto";
-import wixSecretsBackend2 from "wix-secrets-backend";
+import wixSecretsBackend from "wix-secrets-backend";
 import { response } from "wix-http-functions";
 
 // wix-backend/walletCollections.js
@@ -383,7 +382,7 @@ async function syncRequest(request) {
   let stage = "authorization";
   try {
     const supplied = /^Bearer (.+)$/i.exec(request.headers?.authorization || request.headers?.Authorization || "")?.[1] || "";
-    const expected = await wixSecretsBackend2.getSecret("baztango-reservations-export-token");
+    const expected = await wixSecretsBackend.getSecret("baztango-reservations-export-token");
     if (!supplied || !expected || !equal(supplied, expected)) return reply(403, { ok: false });
     stage = "body";
     const body = await request.body.json();
