@@ -5,6 +5,8 @@ Página estática para leer el QR de una imagen y solicitar un pase Apple Wallet
 ## Estado
 
 - Destino: `https://baztangoinfo.github.io/wallet/` y repositorio `baztangoinfo/wallet`.
+- Wix tiene 282 reservas aceptadas activas y la emisión y descarga de un `.pkpass` se han comprobado. El proveedor entregó un enlace temporal; vuelve a subir el QR si caduca.
+- GitHub Pages sigue pendiente: GitHub informa que la cuenta `baztangoinfo` está suspendida y la URL pública responde 404. El primer commit se envió a `main`, pero GitHub bloquea la activación de Pages y posteriores actualizaciones.
 - Wix: `WalletAcceptedReservations` y `WalletGenerationLog` son colecciones privadas. El backend se instala con `install/walletApi.js` y los exports de `install/http-functions.append.txt`, sin sustituir las funciones existentes del sitio.
 - Fuente: `datos/baztango_2026.sqlite3` de Baztango Manager Pro. `scripts/sync_manager.py` lee SQLite en modo solo lectura, incluye todas las reservas con estado `accepted` y personas activas, sin filtros de pago, correo o entrada generada.
 - La sincronización usa un token Wix que permanece fuera de GitHub. El proveedor de pases firma los `.pkpass`; el repositorio no contiene certificados de Apple.

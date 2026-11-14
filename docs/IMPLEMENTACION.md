@@ -22,16 +22,22 @@ fuerte de identidad. Migrarlo exige cambiar conjuntamente entradas y lector.
 
 ## Plan y verificación
 
-- [ ] Probar exportación SQLite en modo solo lectura: aceptación, impagos, sin
+- [x] Probar exportación SQLite en modo solo lectura: aceptación, impagos, sin
   entradas, bajas, duplicados, privacidad y edición correcta.
-- [ ] Implementar esquema privado, sincronización autenticada y revocación;
+- [x] Implementar esquema privado, sincronización autenticada y revocación;
   verificar conservación/invalidez de caché y entradas antiguas.
-- [ ] Mejorar uploader PNG/JPEG/WebP, accesibilidad, errores y timeout;
+- [x] Mejorar uploader PNG/JPEG/WebP, accesibilidad, errores y timeout;
   alojar jsQR localmente y probar QR real en navegador.
-- [ ] Instalar colecciones/backend en Wix cuando el acceso lo permita;
-  publicar GitHub Pages tras validaciones y verificar URL servida.
-- [ ] Documentar resultado real y requisitos externos pendientes sin declarar
+- [x] Instalar colecciones/backend en Wix y sincronizar 282 asistentes aceptados.
+- [ ] Activar GitHub Pages y verificar URL: GitHub devuelve «Your account is
+  suspended» para `baztangoinfo` y la URL pública responde 404.
+- [x] Documentar resultado real y requisitos externos pendientes sin declarar
   integración completa si no puede verificarse en Wix/iPhone.
+
+La API Wix generó y descargó un `.pkpass` firmado para un QR existente: HTTP 200,
+MIME Apple Wallet, ZIP íntegro con `pass.json`, `manifest.json` y `signature`, y
+QR coincidente. El proveedor devolvió enlace temporal, sin copia persistida en
+Wix Media Manager. No se ha comprobado la importación en Safari/iPhone.
 
 Autorización: el usuario solicita implementación y publicación en GitHub; elige
 explícitamente `baztangoinfo/wallet`. No se publican datos privados ni certificados.
