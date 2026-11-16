@@ -29,7 +29,7 @@ fuerte de identidad. Migrarlo exige cambiar conjuntamente entradas y lector.
 - [x] Mejorar uploader PNG/JPEG/WebP, accesibilidad, errores y timeout;
   alojar jsQR localmente y probar QR real en navegador.
 - [x] Instalar colecciones/backend en Wix y sincronizar 282 asistentes aceptados.
-- [ ] Activar GitHub Pages en `joteiza003/wallet` y verificar URL.
+- [x] Activar GitHub Pages en `joteiza003/wallet` y verificar URL.
 - [x] Documentar resultado real y requisitos externos pendientes sin declarar
   integración completa si no puede verificarse en Wix/iPhone.
 
@@ -37,6 +37,12 @@ La API Wix generó y descargó un `.pkpass` firmado para un QR existente: HTTP 2
 MIME Apple Wallet, ZIP íntegro con `pass.json`, `manifest.json` y `signature`, y
 QR coincidente. El proveedor devolvió enlace temporal, sin copia persistida en
 Wix Media Manager. No se ha comprobado la importación en Safari/iPhone.
+
+El 16/11/2026 se publicó `https://joteiza003.github.io/wallet/` desde `main`.
+Una prueba con Chrome abrió la página pública, subió `Wallet.png`, mostró el pase
+listo y descargó un `.pkpass` íntegro con el mismo QR, sin errores JavaScript.
+El origen CORS de Wix se cambió a `https://joteiza003.github.io`; el anterior
+recibe 403. Sigue pendiente la comprobación en Safari de un iPhone real.
 
 Autorización: el usuario solicita implementación y publicación en GitHub; tras
 la suspensión de `baztangoinfo`, elige explícitamente `joteiza003/wallet`.
