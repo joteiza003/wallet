@@ -1,6 +1,6 @@
 # Wallet público y reservas aceptadas
 
-Objetivo: publicar en `baztangoinfo/wallet` una página que lea localmente el QR de
+Objetivo: publicar en `joteiza003/wallet` una página que lea localmente el QR de
 una imagen y solicite a Wix un pase Apple firmado mediante el proveedor existente.
 
 La fuente es SQLite de Manager: reservas con estado `accepted` y personas activas,
@@ -29,8 +29,7 @@ fuerte de identidad. Migrarlo exige cambiar conjuntamente entradas y lector.
 - [x] Mejorar uploader PNG/JPEG/WebP, accesibilidad, errores y timeout;
   alojar jsQR localmente y probar QR real en navegador.
 - [x] Instalar colecciones/backend en Wix y sincronizar 282 asistentes aceptados.
-- [ ] Activar GitHub Pages y verificar URL: GitHub devuelve «Your account is
-  suspended» para `baztangoinfo` y la URL pública responde 404.
+- [ ] Activar GitHub Pages en `joteiza003/wallet` y verificar URL.
 - [x] Documentar resultado real y requisitos externos pendientes sin declarar
   integración completa si no puede verificarse en Wix/iPhone.
 
@@ -39,5 +38,6 @@ MIME Apple Wallet, ZIP íntegro con `pass.json`, `manifest.json` y `signature`, 
 QR coincidente. El proveedor devolvió enlace temporal, sin copia persistida en
 Wix Media Manager. No se ha comprobado la importación en Safari/iPhone.
 
-Autorización: el usuario solicita implementación y publicación en GitHub; elige
-explícitamente `baztangoinfo/wallet`. No se publican datos privados ni certificados.
+Autorización: el usuario solicita implementación y publicación en GitHub; tras
+la suspensión de `baztangoinfo`, elige explícitamente `joteiza003/wallet`.
+No se publican datos privados ni certificados.

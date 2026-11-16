@@ -11,7 +11,7 @@ import {syncRequest} from 'backend/walletSync';
 // SECURITY: set this to the exact published origin (no path or trailing slash).
 // For username.github.io/repo use https://username.github.io
 // For custom domain use https://wallet.yourdomain.com
-const ALLOWED_ORIGIN = 'https://baztangoinfo.github.io';
+const ALLOWED_ORIGIN = 'https://joteiza003.github.io';
 const headers = {
   'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
   'Access-Control-Allow-Methods':'POST, OPTIONS',

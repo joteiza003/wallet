@@ -467,7 +467,7 @@ async function syncRequest(request) {
 }
 
 // wix-backend/http-functions.js
-var ALLOWED_ORIGIN = "https://baztangoinfo.github.io";
+var ALLOWED_ORIGIN = "https://joteiza003.github.io";
 var headers = {
   "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
   "Access-Control-Allow-Methods": "POST, OPTIONS",
